@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sami portfolio</title>
+
+  <!-- Google Fonts: Cormorant Garamond (editorial serif for headings) + Inter (clean sans for body) -->
+  
+  
+  <style type="text/css">@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin-ext/wght/italic.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic-ext/wght/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:300;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin-ext/wght/italic.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Cormorant Garamond;font-style:italic;font-weight:400;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic-ext/wght/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}</style>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─────────────────────────────────────────────
+       HEADER / NAV
+  ───────────────────────────────────────────── -->
+  <header class="site-header">
+    <a href="index.html" class="site-logo">Sami Fouad Abou Saleh</a>
+
+    <!-- Hamburger toggle (mobile) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="early-years.html">Early Years</a></li>
+        <li><a href="acting.html">Acting</a></li>
+        <li><a href="directing.html">Directing</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="the-last-star.html">The Last Star</a></li>
+        <li><a href="scriptwriting.html">Scriptwriting</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ─────────────────────────────────────────────
+       HERO — Full-screen opening with name + tagline
+  ───────────────────────────────────────────── -->
+  <section class="hero">
+    <!-- Background is set via CSS; swap in his most dramatic photo -->
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Actor · Director · Writer</p>
+      <h1 class="hero-name">Sami Fouad<br>Abou Saleh</h1>
+      <p class="hero-tagline">
+        <!-- Replace with actual mission statement -->
+        "Stories have always been how civilisations remember themselves.<br>
+        I exist to make sure they keep being told."
+      </p>
+      <a href="#about" class="hero-cta">Discover the Work</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────
+       ABOUT — Short bio paragraph
+  ───────────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-label">
+          <span>About</span>
+        </div>
+        <div class="about-text">
+          <p class="about-bio">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et maiores quisquam iure optio. 
+            Enim vitae amet sint neque molestiae officia, quibusdam pariatur explicabo dolore dolores, 
+            cupiditate rerum reprehenderit sapiente placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Officia voluptatum aspernatur tempora laboriosam commodi veniam vero sit minima nostrum illo sequi velit
+            aliquam fugiat culpa, neque temporibus maxime pariatur quis?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────
+       SLIDESHOW — 10 landscape photos
+  ───────────────────────────────────────────── -->
+  <section class="slideshow" id="slideshow" aria-label="Photo gallery">
+    <div class="slideshow-track">
+
+      <!-- ── Slide 1 ── Replace src with actual photo paths ── -->
+      <figure class="slide active" aria-hidden="false">
+        <img src="images/photo-01.jpg" alt="Description of photo 1" />
+        <figcaption>Caption one — production name or moment</figcaption>
+      </figure>
+
+      <!-- ── Slide 2 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-02.jpg" alt="Description of photo 2" />
+        <figcaption>Caption two</figcaption>
+      </figure>
+
+      <!-- ── Slide 3 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-03.jpg" alt="Description of photo 3" />
+        <figcaption>Caption three</figcaption>
+      </figure>
+
+      <!-- ── Slide 4 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-04.jpg" alt="Description of photo 4" />
+        <figcaption>Caption four</figcaption>
+      </figure>
+
+      <!-- ── Slide 5 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-05.jpg" alt="Description of photo 5" />
+        <figcaption>Caption five</figcaption>
+      </figure>
+
+      <!-- ── Slide 6 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-06.jpg" alt="Description of photo 6" />
+        <figcaption>Caption six</figcaption>
+      </figure>
+
+      <!-- ── Slide 7 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-07.jpg" alt="Description of photo 7" />
+        <figcaption>Caption seven</figcaption>
+      </figure>
+
+      <!-- ── Slide 8 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-08.jpg" alt="Description of photo 8" />
+        <figcaption>Caption eight</figcaption>
+      </figure>
+
+      <!-- ── Slide 9 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-09.jpg" alt="Description of photo 9" />
+        <figcaption>Caption nine</figcaption>
+      </figure>
+
+      <!-- ── Slide 10 ── -->
+      <figure class="slide" aria-hidden="true">
+        <img src="images/photo-10.jpg" alt="Description of photo 10" />
+        <figcaption>Caption ten</figcaption>
+      </figure>
+
+    </div><!-- /.slideshow-track -->
+
+    <!-- Controls -->
+    <button class="slideshow-btn prev" aria-label="Previous photo">&#8592;</button>
+    <button class="slideshow-btn next" aria-label="Next photo">&#8594;</button>
+
+    <!-- Dot indicators -->
+    <div class="slideshow-dots" role="tablist" aria-label="Slide indicators"></div>
+
+    <!-- Progress bar -->
+    <div class="slideshow-progress" aria-hidden="true">
+      <div class="slideshow-progress-bar"></div>
+    </div>
+
+  </section><!-- /.slideshow -->
+
+  <!-- ─────────────────────────────────────────────
+       PAGES PREVIEW — Quick links to the 7 other pages
+       so the full site structure is visible
+  ───────────────────────────────────────────── -->
+  <section class="pages-preview">
+    <div class="container">
+      <h2 class="section-title">Explore</h2>
+      <div class="pages-grid">
+
+        <a href="early-years.html" class="page-card">
+          <span class="page-card-number">01</span>
+          <span class="page-card-title">Early Years</span>
+          <span class="page-card-sub">Middle school &amp; high school</span>
+        </a>
+
+        <a href="acting.html" class="page-card">
+          <span class="page-card-number">02</span>
+          <span class="page-card-title">Acting Career</span>
+          <span class="page-card-sub">Every production, 2013–present</span>
+        </a>
+
+        <a href="directing.html" class="page-card">
+          <span class="page-card-number">03</span>
+          <span class="page-card-title">Directing</span>
+          <span class="page-card-sub">Five directed plays</span>
+        </a>
+
+        <a href="production.html" class="page-card">
+          <span class="page-card-number">04</span>
+          <span class="page-card-title">Production</span>
+          <span class="page-card-sub">Film, marketing &amp; set design</span>
+        </a>
+
+        <a href="the-last-star.html" class="page-card">
+          <span class="page-card-number">05</span>
+          <span class="page-card-title">The Last Star</span>
+          <span class="page-card-sub">Leadership &amp; history</span>
+        </a>
+
+        <a href="scriptwriting.html" class="page-card">
+          <span class="page-card-number">06</span>
+          <span class="page-card-title">Scriptwriting</span>
+          <span class="page-card-sub">Original works &amp; adaptations</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────
+       FOOTER
+  ───────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-name">Firstname Lastname</p>
+      <p class="footer-copy">&copy; 2026. All rights reserved.</p>
+      <!-- Add social links here if he has them -->
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

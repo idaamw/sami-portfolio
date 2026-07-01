@@ -1,0 +1,736 @@
+/* ═══════════════════════════════════════════════════════════════
+   THEATRE PORTFOLIO — style.css
+   Dark, editorial, theatrical. Cormorant Garamond + Inter.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────
+   0. TOKENS
+───────────────────────────────────────────── */
+:root {
+  /* Palette */
+  --clr-bg:          #0c0c0c;   /* near-black background */
+  --clr-surface:     #141414;   /* slightly lifted surface */
+  --clr-surface-2:   #1c1c1c;   /* card / hover surface */
+  --clr-border:      #2a2a2a;   /* subtle dividers */
+  --clr-text:        #e8e2d9;   /* warm off-white, not harsh */
+  --clr-text-muted:  #7a7570;   /* secondary / captions */
+  --clr-accent:      #c9a96e;   /* warm gold — stage-light feel */
+  --clr-accent-dim:  #8a6f3f;   /* muted gold for borders */
+
+  /* Type */
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-sans:   'Inter', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --sp-xs:  0.5rem;
+  --sp-sm:  1rem;
+  --sp-md:  2rem;
+  --sp-lg:  4rem;
+  --sp-xl:  7rem;
+  --sp-2xl: 11rem;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 200ms;
+  --dur-mid:  500ms;
+  --dur-slow: 900ms;
+
+  /* Layout */
+  --max-w: 1200px;
+  --header-h: 72px;
+}
+
+/* ─────────────────────────────────────────────
+   1. RESET & BASE
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ─────────────────────────────────────────────
+   2. UTILITY
+───────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--sp-md);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: 0.05em;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-lg);
+  position: relative;
+  display: inline-block;
+}
+
+/* Gold underline accent on section titles */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--clr-accent);
+}
+
+/* ─────────────────────────────────────────────
+   3. HEADER & NAV
+───────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--sp-md);
+  /* Starts transparent, gains background on scroll via JS */
+  background: transparent;
+  transition: background var(--dur-mid) var(--ease),
+              border-bottom var(--dur-mid) var(--ease);
+}
+
+/* JS adds this class once the user scrolls past the hero */
+.site-header.scrolled {
+  background: rgba(12, 12, 12, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.site-logo {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text);
+  transition: color var(--dur-fast) var(--ease);
+  flex-shrink: 0;
+}
+
+.site-logo:hover {
+  color: var(--clr-accent);
+}
+
+/* Nav links */
+.site-nav ul {
+  display: flex;
+  gap: var(--sp-md);
+  align-items: center;
+}
+
+.site-nav a {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  transition: color var(--dur-fast) var(--ease);
+  position: relative;
+}
+
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--clr-accent);
+  transition: width var(--dur-fast) var(--ease);
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--clr-text);
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+  width: 100%;
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--clr-text);
+  transition: transform var(--dur-fast) var(--ease),
+              opacity var(--dur-fast) var(--ease);
+}
+
+/* Animate hamburger → X */
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────────
+   4. HERO
+───────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* BACKGROUND PHOTO */
+  background-image: url('images/sami-hero.webp');
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Dark gradient overlay so text is always legible */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 12, 12, 0.55) 0%,
+    rgba(12, 12, 12, 0.35) 40%,
+    rgba(12, 12, 12, 0.80) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-inline: var(--sp-md);
+  max-width: 860px;
+
+  /* Fade-in on load (JS adds .loaded to body) */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease),
+              transform var(--dur-slow) var(--ease);
+}
+
+body.loaded .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--sp-sm);
+}
+
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-md);
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--sp-lg);
+}
+
+.hero-cta {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-text);
+  border: 1px solid var(--clr-accent-dim);
+  padding: 0.85rem 2.2rem;
+  transition: background var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+}
+
+.hero-cta:hover {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: var(--clr-bg);
+}
+
+/* Scroll indicator — animated line drops from bottom of hero */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--sp-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--clr-accent), transparent);
+  animation: scrollDrop 1.8s var(--ease) infinite;
+  transform-origin: top;
+}
+
+@keyframes scrollDrop {
+  0%   { transform: scaleY(0); opacity: 1; }
+  60%  { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────
+   5. ABOUT
+───────────────────────────────────────────── */
+.about {
+  padding-block: var(--sp-xl);
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--sp-lg);
+  align-items: start;
+}
+
+.about-label {
+  padding-top: 0.4rem;
+}
+
+.about-label span {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  position: relative;
+  display: inline-block;
+}
+
+/* Gold line extending from the label */
+.about-label span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 14px);
+  width: 30px;
+  height: 1px;
+  background: var(--clr-accent);
+}
+
+.about-bio {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--clr-text);
+  max-width: 75ch;
+}
+
+/* ─────────────────────────────────────────────
+   6. SLIDESHOW
+───────────────────────────────────────────── */
+.slideshow {
+  position: relative;
+  width: 100%;
+  background: var(--clr-bg);
+  /* Height is driven by the images; we constrain max height */
+}
+
+.slideshow-track {
+  position: relative;
+  width: 100%;
+  /* 56.25% = 16:9 aspect ratio. Adjust if photos have a different ratio. */
+  aspect-ratio: 16 / 9;
+  max-height: 85vh;
+  overflow: hidden;
+}
+
+/* Each slide stacks on top of each other */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease);
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Caption — fades in from the bottom of each slide */
+.slide figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--sp-md);
+  background: linear-gradient(transparent, rgba(12, 12, 12, 0.75));
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+}
+
+/* Prev / Next buttons */
+.slideshow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 1.4rem;
+  color: var(--clr-text-muted);
+  padding: var(--sp-sm) var(--sp-md);
+  transition: color var(--dur-fast) var(--ease),
+              background var(--dur-fast) var(--ease);
+  line-height: 1;
+  background: rgba(12, 12, 12, 0.4);
+}
+
+.slideshow-btn:hover {
+  color: var(--clr-accent);
+  background: rgba(12, 12, 12, 0.7);
+}
+
+.slideshow-btn.prev { left: 0; }
+.slideshow-btn.next { right: 0; }
+
+/* Dot indicators */
+.slideshow-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(232, 226, 217, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+
+.dot.active {
+  background: var(--clr-accent);
+  transform: scale(1.3);
+}
+
+/* Progress bar along the bottom edge */
+.slideshow-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--clr-border);
+  z-index: 10;
+}
+
+.slideshow-progress-bar {
+  height: 100%;
+  background: var(--clr-accent);
+  width: 0%;
+  transition: width linear; /* duration set via JS to match autoplay interval */
+}
+
+/* ─────────────────────────────────────────────
+   7. PAGES PREVIEW (Explore grid)
+───────────────────────────────────────────── */
+.pages-preview {
+  padding-block: var(--sp-xl);
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+}
+
+.pages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; /* gap becomes the border by using 1px on a dark bg */
+  background: var(--clr-border);
+  border: 1px solid var(--clr-border);
+}
+
+.page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: var(--sp-lg) var(--sp-md);
+  background: var(--clr-surface);
+  transition: background var(--dur-fast) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent stripe reveals on hover */
+.page-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: var(--clr-accent);
+  transition: height var(--dur-mid) var(--ease);
+}
+
+.page-card:hover {
+  background: var(--clr-surface-2);
+}
+
+.page-card:hover::before {
+  height: 100%;
+}
+
+.page-card-number {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--clr-accent);
+}
+
+.page-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 300;
+  color: var(--clr-text);
+  line-height: 1.2;
+}
+
+.page-card-sub {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--clr-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ─────────────────────────────────────────────
+   8. FOOTER
+───────────────────────────────────────────── */
+.site-footer {
+  padding-block: var(--sp-lg);
+  border-top: 1px solid var(--clr-border);
+  background: var(--clr-bg);
+  text-align: center;
+}
+
+.footer-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--clr-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.footer-copy {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--clr-border);
+}
+
+/* ─────────────────────────────────────────────
+   9. SCROLL REVEAL ANIMATION
+   JS adds .revealed class when element enters viewport
+───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children by index (JS sets --i on each child) */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.reveal-stagger.revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   10. RESPONSIVE
+───────────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+  }
+
+  .about-label span::before {
+    display: none;
+  }
+
+  .pages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  :root {
+    --sp-xl: 4rem;
+    --sp-lg: 2.5rem;
+  }
+
+  /* Mobile nav — slide in from top */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 12, 12, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-mid) var(--ease);
+    z-index: 99;
+  }
+
+  .site-nav.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: var(--sp-lg);
+    text-align: center;
+  }
+
+  .site-nav a {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+  }
+
+  .pages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slideshow-btn {
+    display: none; /* rely on swipe on mobile */
+  }
+}
