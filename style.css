@@ -175,7 +175,7 @@ button {
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--clr-text-muted);
+  color: white;
   transition: color var(--dur-fast) var(--ease);
   position: relative;
 }
@@ -286,7 +286,7 @@ body.loaded .hero-content {
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--clr-accent);
+  color: white;
   margin-bottom: var(--sp-sm);
 }
 
