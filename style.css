@@ -331,7 +331,7 @@ body.loaded .hero-content {
   color: var(--clr-bg);
 }
 
-/* Scroll indicator — animated line drops from bottom of hero */
+/* Scroll indicator — animated chevron arrow */
 .scroll-indicator {
   position: absolute;
   bottom: var(--sp-md);
@@ -343,19 +343,20 @@ body.loaded .hero-content {
   z-index: 2;
 }
 
-.scroll-line {
+.scroll-arrow {
   display: block;
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--clr-accent), transparent);
-  animation: scrollDrop 1.8s var(--ease) infinite;
-  transform-origin: top;
+  width: 18px;
+  height: 18px;
+  border-right: 2px solid var(--clr-accent);
+  border-bottom: 2px solid var(--clr-accent);
+  transform: rotate(45deg);
+  animation: scrollBounce 1.6s var(--ease) infinite;
 }
 
-@keyframes scrollDrop {
-  0%   { transform: scaleY(0); opacity: 1; }
-  60%  { transform: scaleY(1); opacity: 1; }
-  100% { transform: scaleY(1); opacity: 0; }
+@keyframes scrollBounce {
+  0%   { opacity: 0; transform: rotate(45deg) translate(-4px, -4px); }
+  50%  { opacity: 1; }
+  100% { opacity: 0; transform: rotate(45deg) translate(4px, 4px); }
 }
 
 /* ─────────────────────────────────────────────
