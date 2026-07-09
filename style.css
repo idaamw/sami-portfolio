@@ -305,7 +305,7 @@ body.loaded .hero-content {
   font-style: italic;
   font-size: clamp(1rem, 2vw, 1.35rem);
   font-weight: 300;
-  color: var(--clr-text-muted);
+  color: white;
   line-height: 1.6;
   margin-bottom: var(--sp-lg);
 }
