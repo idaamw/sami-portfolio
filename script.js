@@ -65,11 +65,16 @@ siteNav.querySelectorAll('a').forEach(link => {
 /* ─────────────────────────────────────────────
    4. SLIDESHOW
 ───────────────────────────────────────────── */
-const slides       = Array.from(document.querySelectorAll('.slide'));
-const dotsContainer = document.querySelector('.slideshow-dots');
-const prevBtn      = document.querySelector('.slideshow-btn.prev');
-const nextBtn      = document.querySelector('.slideshow-btn.next');
-const progressBar  = document.querySelector('.slideshow-progress-bar');
+ const slides        = Array.from(document.querySelectorAll('.slide'));
+       const dotsContainer = document.querySelector('.slideshow-dots');
+       const prevBtn       = document.querySelector('.slideshow-btn.prev');
+       const nextBtn       = document.querySelector('.slideshow-btn.next');
+       const progressBar   = document.querySelector('.slideshow-progress-bar');
+   
+       if (!slides.length || !dotsContainer || !progressBar) {
+         // No slideshow on this page — skip all slideshow init.
+         // (Jump to the end of section 4 in your editor.)
+       } else {
 
 let currentSlide   = 0;
 let autoplayTimer  = null;
@@ -216,6 +221,8 @@ slideshowEl.addEventListener('keydown', e => {
 /* --- Kick it off --- */
 startAutoplay();
 
+       }
+
 /* ─────────────────────────────────────────────
    5. SCROLL REVEAL
    Uses IntersectionObserver. Elements with class
@@ -264,4 +271,22 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
   revealObserver.observe(el);
+});
+
+
+
+
+
+/* ─────────────────────────────────────────────
+   EARLY YEARS — extra reveal targets + plays grid stagger
+───────────────────────────────────────────── */
+
+// Stagger index for plays grid cards
+document.querySelectorAll('.plays-grid .play-card').forEach((card, i) => {
+  card.style.setProperty('--i', i);
+});
+
+// Make the plays grid itself a stagger container
+document.querySelectorAll('.plays-grid').forEach(grid => {
+  grid.classList.add('reveal-stagger');
 });

@@ -1,3 +1,7 @@
+/* Innholdsfortegnelse
+MAIN PAGE
+EARLY YEARS
+
 /* ═══════════════════════════════════════════════════════════════
    THEATRE PORTFOLIO — style.css
    Dark, editorial, theatrical. Cormorant Garamond + Inter.
@@ -733,5 +737,297 @@ body.loaded .hero-content {
 
   .slideshow-btn {
     display: none; /* rely on swipe on mobile */
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   EARLY YEARS 
+   Adds: page hero, narrative layout, plays grid, and early-years responsive.
+   Does NOT repeat: tokens, reset, header/nav, footer, reveal, or slideshow —
+   those are already in style.css and work as-is on early-years.html.
+───────────────────────────────────────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────────
+   PAGE HERO
+   Used on early-years.html (and any future
+   inner pages) instead of the full-screen hero.
+───────────────────────────────────────────── */
+.page-hero {
+  padding-top: calc(var(--header-h) + var(--sp-xl));
+  padding-bottom: var(--sp-lg);
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 100%,
+    rgba(201, 169, 110, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--sp-sm);
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--clr-text);
+  margin-bottom: 0.6rem;
+}
+
+.page-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.03em;
+}
+
+
+/* ─────────────────────────────────────────────
+   NARRATIVE — text left, slideshow right
+───────────────────────────────────────────── */
+.narrative-section {
+  padding-block: var(--sp-xl);
+  background: var(--clr-surface);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.narrative-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-lg);
+  align-items: start;
+}
+
+.narrative-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: calc(var(--sp-sm) * 0.5);
+  position: relative;
+  padding-left: 2.8rem;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2rem;
+  height: 1px;
+  background: var(--clr-accent);
+}
+
+.narrative-text p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--clr-text);
+  max-width: 65ch;
+}
+
+.narrative-slideshow {
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-md));
+}
+
+/* Portrait aspect ratio for the early-years slideshow.
+   The main site uses 16/9; this overrides to 3/4 only
+   inside .narrative-slideshow so the home page is unaffected. */
+.narrative-slideshow .slideshow-track {
+  aspect-ratio: 3 / 4;
+  max-height: none;
+}
+
+
+/* ─────────────────────────────────────────────
+   PLAYS — Netflix-style grid
+───────────────────────────────────────────── */
+.plays-section {
+  padding-block: var(--sp-xl);
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+}
+
+.plays-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-sm);
+}
+
+.play-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  color: inherit;
+}
+
+.play-card-img-wrap {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.play-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--dur-mid) var(--ease),
+              filter    var(--dur-mid) var(--ease);
+}
+
+.play-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 12, 12, 0.6);
+  opacity: 0;
+  transition: opacity var(--dur-mid) var(--ease);
+}
+
+.play-card-view {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  border: 1px solid var(--clr-accent-dim);
+  padding: 0.5rem 1.1rem;
+  transition: background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+}
+
+/* Gold top-border slides in on hover */
+.play-card-img-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--clr-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-mid) var(--ease);
+  z-index: 2;
+}
+
+.play-card:hover .play-card-img-wrap            { border-color: var(--clr-accent-dim); }
+.play-card:hover .play-card-img-wrap::before    { transform: scaleX(1); }
+.play-card:hover .play-card-img-wrap img        { transform: scale(1.04); filter: brightness(0.75); }
+.play-card:hover .play-card-overlay             { opacity: 1; }
+.play-card:hover .play-card-view                { background: var(--clr-accent); color: var(--clr-bg); }
+
+.play-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-weight: 300;
+  color: var(--clr-text);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  transition: color var(--dur-fast) var(--ease);
+  padding-inline: 2px;
+}
+
+.play-card:hover .play-card-title { color: var(--clr-accent); }
+
+
+/* ─────────────────────────────────────────────
+   EARLY YEARS — RESPONSIVE ADDITIONS
+   Merge these into the existing @media blocks in
+   style.css, or leave them here — either works.
+───────────────────────────────────────────── */
+
+/* Large tablet */
+@media (max-width: 1100px) {
+  .plays-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .narrative-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  /* Slideshow above text when stacked */
+  .narrative-slideshow {
+    order: -1;
+    position: static;
+  }
+
+  .narrative-slideshow .slideshow-track {
+    aspect-ratio: 4 / 3;
+  }
+
+  .plays-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  /* Hide prev/next on mobile — swipe handles navigation */
+  /* (The main site already hides .slideshow-btn at this breakpoint
+     if you added it; if not, this rule adds the cover.) */
+  .narrative-slideshow .slideshow-btn {
+    display: none;
+  }
+
+  .narrative-slideshow .slideshow-track {
+    aspect-ratio: 4 / 3;
+  }
+
+  .plays-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .play-card-title {
+    font-size: 0.8rem;
   }
 }
