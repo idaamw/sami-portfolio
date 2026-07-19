@@ -742,7 +742,7 @@ body.loaded .hero-content {
 
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   EARLY YEARS 
+   EARLY YEARS  
    Adds: page hero, narrative layout, plays grid, and early-years responsive.
    Does NOT repeat: tokens, reset, header/nav, footer, reveal, or slideshow —
    those are already in style.css and work as-is on early-years.html.
