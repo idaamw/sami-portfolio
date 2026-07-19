@@ -1030,3 +1030,83 @@ body.loaded .hero-content {
     font-size: 0.8rem;
   }
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PLAY PAGE (early years)
+   Adds: play content layout, landscape slideshow override, back link.
+───────────────────────────────────────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────────
+   PLAY CONTENT
+───────────────────────────────────────────── */
+.play-section {
+  padding-block: var(--sp-xl);
+  background: var(--clr-surface);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.play-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+/* Description */
+.play-description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.play-description p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--clr-text);
+}
+
+/* Landscape slideshow — 16:9 by default, same as main site slideshow */
+.play-slideshow-track {
+  aspect-ratio: 16 / 9;
+  max-height: 70vh;
+  border: 1px solid var(--clr-border);
+}
+
+/* ─────────────────────────────────────────────
+   BACK LINK
+───────────────────────────────────────────── */
+.play-back {
+  padding-block: var(--sp-lg);
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.play-back-link {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.play-back-link:hover {
+  color: var(--clr-accent);
+}
+
+/* ─────────────────────────────────────────────
+   PLAY PAGE — RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  /* Nudge toward 4:3 on phones — still landscape, just a touch taller */
+  .play-slideshow-track {
+    aspect-ratio: 4 / 3;
+    max-height: none;
+  }
+}
