@@ -748,11 +748,13 @@ body.loaded .hero-content {
    those are already in style.css and work as-is on early-years.html.
 ───────────────────────────────────────────────────────────────────────────── */
 
+
 /* ─────────────────────────────────────────────
    PAGE HERO
    Used on early-years.html (and any future
    inner pages) instead of the full-screen hero.
 ───────────────────────────────────────────── */
+
 .page-hero {
   padding-top: calc(var(--header-h) + var(--sp-xl));
   padding-bottom: var(--sp-lg);
@@ -1030,6 +1032,7 @@ body.loaded .hero-content {
     font-size: 0.8rem;
   }
 }
+
 
 
 /* ─────────────────────────────────────────────────────────────────────────────
