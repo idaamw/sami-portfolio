@@ -1073,6 +1073,11 @@ body.loaded .hero-content {
   color: var(--clr-text);
 }
 
+.play-description p b,
+.play-description p strong {
+  font-weight: 600;
+}
+
 /* Landscape slideshow — 16:9 by default, same as main site slideshow */
 .play-slideshow-track {
   aspect-ratio: 16 / 9;
@@ -1107,7 +1112,6 @@ body.loaded .hero-content {
    PLAY PAGE — RESPONSIVE
 ───────────────────────────────────────────── */
 @media (max-width: 600px) {
-  /* Nudge toward 4:3 on phones — still landscape, just a touch taller */
   .play-slideshow-track {
     aspect-ratio: 4 / 3;
     max-height: none;
